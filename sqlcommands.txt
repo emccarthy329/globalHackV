@@ -1,0 +1,13 @@
+sqlite3 ghack5-1.db
+
+CREATE TABLE citations (id INTEGER PRIMARY KEY, citation_number varchar(15), citation_date datetime, first_name varchar(200), last_name varchar(200), date_of_birth datetime, defendant_address varchar(300), defendant_city varchar(300), defendant_state varchar(300), drivers_license_number varchar(300), court_date datetime, court_location varchar(300), court_address varchar(300));
+CREATE TABLE violations (id INTEGER PRIMARY KEY, citation_number varchar(15), violation_description varchar(300), warrant_status varchar(10), warrant_number varchar(100), status varchar(100), fine_amount varchar(100), court_cost varchar(100));
+
+CREATE TABLE citations (id integer, citation_number text, citation_date datetime, first_name text, last_name text, date_of_birth datetime, defendant_address text, defendant_city text, defendant_state text, drivers_license_number text, court_date datetime, court_location text, court_address text);
+CREATE TABLE violations (id integer, citation_number text, violation_number text, violation_description text, warrant_status text, warrant_number text, status text, status_date date, fine_amount text, court_cost text);
+
+
+.separator ","
+.import /Users/rcjones/Downloads/citations.csv citations
+.import /Users/rcjones/Downloads/violations.csv violations
+
