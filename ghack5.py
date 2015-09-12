@@ -46,4 +46,5 @@ def citations():
 
 	
 debug(True)
-run(reloader=True, host='10.4.245.19', port=8080)
+#run(reloader=True, host='10.4.245.19', port=8080)
+run(reloader=True, port=8080)
