@@ -18,7 +18,7 @@ def violaitons():
 
 @route('/citations')
 def citations():
-    conn = sqlite3.connect('ghack5')
+    conn = sqlite3.connect('ghack5-1.db')
     c = conn.cursor()
     #c.execute("SELECT id, task FROM todo WHERE status LIKE '0'")
     #c.execute("SELECT id, citation_number FROM citations")
