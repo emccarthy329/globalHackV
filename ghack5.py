@@ -6,19 +6,23 @@ def violaitons():
 	conn = sqlite3.connect('ghack5')
 	c = conn.cursor()
 	#c.execute("SELECT id, task FROM todo WHERE status LIKE '0'")
-	c.execute("SELECT id, violation_descriptions FROM violations")
+	#c.execute("SELECT id, violation_descriptions, citation_number FROM violations")
+	c.execute("SELECT * FROM violations")
     #c.execute("SELECT id, citation_number FROM violations")
 	result = c.fetchall()
 	c.close()
+	#print result
 	output = template('make_table', rows=result)
 	return output
+    #return result
 
 @route('/citations')
 def citations():
     conn = sqlite3.connect('ghack5')
     c = conn.cursor()
     #c.execute("SELECT id, task FROM todo WHERE status LIKE '0'")
-    c.execute("SELECT id, citation_number FROM citations")
+    #c.execute("SELECT id, citation_number FROM citations")
+    c.execute("SELECT * FROM citations")
     #c.execute("SELECT id, citation_number FROM violations")
     result = c.fetchall()
     c.close()
